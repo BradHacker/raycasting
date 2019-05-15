@@ -1,7 +1,13 @@
-html, body {
-  margin: 0;
-  padding: 0;
+html {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  background-color: #305f72;
 }
+
 canvas {
   display: block;
 }
