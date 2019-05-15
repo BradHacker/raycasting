@@ -3,11 +3,20 @@ class Ray {
     this.pos = pos;
     this.angle = p5.Vector.fromAngle(angle);
   }
-  
+
+  setAngle(angle) {
+    this.angle = p5.Vector.fromAngle(angle);
+  }
+
   show() {
     stroke(255, 100);
     strokeWeight(1);
-    line(this.pos.x, this.pos.y, this.pos.x + this.angle.x, this.pos.y + this.angle.y);
+    line(
+      this.pos.x,
+      this.pos.y,
+      this.pos.x + this.angle.x,
+      this.pos.y + this.angle.y
+    );
   }
 
   pointAt(x, y) {
@@ -29,12 +38,12 @@ class Ray {
 
     let den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
 
-    if(den == 0) return;
+    if (den == 0) return;
 
     let t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
     let u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
 
-    if(t > 0 && t < 1 && u > 0) {
+    if (t > 0 && t < 1 && u > 0) {
       let pt = createVector();
       pt.x = x1 + t * (x2 - x1);
       pt.y = y1 + t * (y2 - y1);
